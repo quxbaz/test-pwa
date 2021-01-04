@@ -1,4 +1,8 @@
 /*
+  Source: https://googlechrome.github.io/samples/service-worker/custom-offline-page/
+*/
+
+/*
  Copyright 2015 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
