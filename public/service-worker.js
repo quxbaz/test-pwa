@@ -88,3 +88,10 @@ self.addEventListener('fetch', (event) => {
     }))
   }
 });
+
+self.addEventListener('message', (event) => {
+  console.log(event)
+  if (event.data && event.data.type === 'MESSAGE_IDENTIFIER') {
+    console.log('received message')
+  }
+})

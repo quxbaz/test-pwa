@@ -39,3 +39,10 @@ document.getElementById('fetch-button').addEventListener('click', async () => {
     setResponseText(`${response.status} - ${response.statusText}. ${json.message}`)
   }
 })
+
+document.getElementById('toggle').addEventListener('change', (event) => {
+  // console.log(event.target.checked)
+  navigator.serviceWorker.controller.postMessage({
+    type: 'MESSAGE_IDENTIFIER',
+  })
+})
