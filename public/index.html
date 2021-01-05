@@ -28,9 +28,17 @@
           <p id="fetch-response" style="display: inline-block">____</p>
         </div>
         <p>
-          Makes a fetch call to an invalid destination URL.  If you're in online
-          mode, this will render an error.  If you're in offline mode, the
-          service worker will intercept this call and return an offline message.
+          Triggers a fetch request to a non-existing endpoint.
+          <br />
+          Normally you would get a 404 response.
+          <br />
+          However, service workers have the ability to intercept fetch events and
+          provide an arbitrary Response.
+          <br />
+          If the checkbox is disabled, the response should be a 404 error.
+          <br />
+          If the checkbox is enabled, the service worker will intercept the fetch and
+          provide a custom message.
         </p>
       </div>
     </div>
