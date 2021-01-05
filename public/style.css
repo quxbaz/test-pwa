@@ -31,3 +31,14 @@ hr {
   padding: 8px 16px;
   margin-right: 6px;
 }
+
+input[type="checkbox"] {
+  position: relative;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+}
+
+button + label {
+  margin-left: 12px;
+}
