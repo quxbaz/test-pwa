@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-function setFetchResponseText (text) {
+function setResponseText (text) {
   document.getElementById('fetch-response').innerText = text
 }
 
@@ -25,8 +25,8 @@ function setFetchResponseText (text) {
 */
 document.getElementById('fetch-button').addEventListener('click', async () => {
   const response = await fetch('/road/to/nowhere')
-  // const json = response.json()
-  // if (json.status === '') {
-    // setFetchResponseText(json.status)
-  // } else
+  if (response.status === 404) {
+    setResponseText(`${response.status} - ${response.statusText}`)
+  }
+  console.log(response)
 })

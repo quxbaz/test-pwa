@@ -1,5 +1,5 @@
 body {
-  background: #ff8800;
+  background: hsl(52deg 50% 70%);
   padding-top: 40px;
   font-family: helvetica, arial, sans-serif;
   font-size: 15px;
@@ -34,4 +34,10 @@ input[type="checkbox"] {
 
 button + label {
   margin-left: 12px;
+}
+
+#response {
+  margin-top: 22px;
+  padding: 0px 26px;
+  border: 1px solid #000;
 }

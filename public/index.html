@@ -23,22 +23,22 @@
             Enable service worker to intercept fetch
           </label>
         </div>
-        <div>
+        <div id="response">
           <b>Response:</b>
           <p id="fetch-response" style="display: inline-block">____</p>
         </div>
         <p>
-          Triggers a fetch request to a non-existing endpoint.
+          <em>Triggers a fetch request to a non-existing endpoint.</em>
           <br />
           Normally you would get a 404 response.
           <br />
           However, service workers have the ability to intercept fetch events and
           provide an arbitrary Response.
           <br />
-          If the checkbox is disabled, the response should be a 404 error.
+          If the checkbox is <em>disabled</em>, the response should be a 404 error.
           <br />
-          If the checkbox is enabled, the service worker will intercept the fetch and
-          provide a custom message.
+          If the checkbox is <em>enabled</em>, the service worker will intercept
+          the fetch and provide a custom message.
         </p>
       </div>
     </div>
