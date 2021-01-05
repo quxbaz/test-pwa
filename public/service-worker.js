@@ -78,22 +78,13 @@ self.addEventListener('fetch', (event) => {
       })
     );
   } else if (event.request.url === `${location.origin}/road/to/nowhere`) {
-    // Intercept the purposefully invalid destination URL and provide something meaningful.
-
-    /*
-      TODO: Find out why the type options do in Blob, and in Response. Is a Blob
-      necessary here, or is there an easier way?
-    */
-
-    // const body = new Blob(['Fetch intercepted by service worker.'], {type: 'application/json'})
-    // event.respondWith(new Response(body, {
-    //   contentType: 'application/json',
-    //   status: 200,
-    //   statusText: 'ok',
-    // }))
-
-    // event.respondWith(new Response(
-    // ))
-
+    const json = JSON.stringify({
+      message: 'Fetch request intercepted by service worker.',
+    })
+    const blob = new Blob([json], {type: 'application/json'})
+    event.respondWith(new Response(blob, {
+      status: 200,
+      statusText: 'ok',
+    }))
   }
 });

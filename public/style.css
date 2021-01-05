@@ -6,6 +6,10 @@ body {
   line-height: 1.5rem;
 }
 
+.flash {
+  background: #f0f;
+}
+
 strong {
   text-decoration: underline;
 }
@@ -40,4 +44,5 @@ button + label {
   margin-top: 22px;
   padding: 0px 26px;
   border: 1px solid #000;
+  transition: all 100ms linear;
 }
