@@ -26,3 +26,8 @@ hr {
   max-width: 720px;
   margin: 0 auto;
 }
+
+#fetch-button {
+  padding: 8px 16px;
+  margin-right: 6px;
+}
