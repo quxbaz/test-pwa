@@ -16,8 +16,12 @@
       </p>
       <hr />
       <div>
-        <button id="fetch-button" type="button">Test Fetch</button> If you're in
-        offline mode, this should trigger the cached offline page to appear.
+        <button id="fetch-button" type="button">Test Fetch</button>
+        <p>
+          Makes a fetch call to an invalid destination URL.  If you're in online
+          mode, this will render an error.  If you're in offline mode, the
+          service worker will intercept this call and return an offline message.
+        </p>
       </div>
     </div>
     <script src="./script.js"></script>

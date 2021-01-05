@@ -66,7 +66,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate' ||
       (event.request.method === 'GET' &&
        event.request.headers.get('accept').includes('text/html'))) {
@@ -77,5 +77,12 @@ self.addEventListener('fetch', event => {
         return caches.match(OFFLINE_URL);
       })
     );
+  } else if (event.request.url === `${location.origin}/road/to/nowhere`) {
+    // Intercept the purposefully invalid destination URL and provide something meaningful.
+    const body = new Blob(['Fetch intercepted by service worker.'], {type: 'text'})
+    event.respondWith(new Response(body, {
+      status: 200,
+      statusText: 'ok',
+    }))
   }
 });
