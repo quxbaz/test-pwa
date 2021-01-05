@@ -16,7 +16,17 @@
       </p>
       <hr />
       <div>
-        <button id="fetch-button" type="button">Test Fetch</button>
+        <div>
+          <button id="fetch-button" type="button">Trigger fetch to non-existing endpoint</button>
+          <label>
+            <input type="checkbox" />
+            Enable service worker to intercept fetch
+          </label>
+        </div>
+        <div>
+          <b>Response:</b>
+          <p id="fetch-response" style="display: inline-block">____</p>
+        </div>
         <p>
           Makes a fetch call to an invalid destination URL.  If you're in online
           mode, this will render an error.  If you're in offline mode, the
