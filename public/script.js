@@ -41,8 +41,8 @@ document.getElementById('fetch-button').addEventListener('click', async () => {
 })
 
 document.getElementById('toggle').addEventListener('change', (event) => {
-  // console.log(event.target.checked)
   navigator.serviceWorker.controller.postMessage({
-    type: 'MESSAGE_IDENTIFIER',
+    type: 'CLIENT_MESSAGE',
+    shouldInterceptFetch: event.target.checked,
   })
 })

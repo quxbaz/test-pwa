@@ -25,6 +25,10 @@ let CURRENT_CACHES = {
 };
 const OFFLINE_URL = 'offline.html';
 
+var local = {
+  shouldInterceptFetch: false,
+}
+
 function createCacheBustedRequest(url) {
   let request = new Request(url, {cache: 'reload'});
 
@@ -77,7 +81,8 @@ self.addEventListener('fetch', (event) => {
         return caches.match(OFFLINE_URL);
       })
     );
-  } else if (event.request.url === `${location.origin}/road/to/nowhere`) {
+  } else if (local.shouldInterceptFetch &&
+             event.request.url === `${location.origin}/road/to/nowhere`) {
     const json = JSON.stringify({
       message: 'Fetch request intercepted by service worker.',
     })
@@ -90,8 +95,7 @@ self.addEventListener('fetch', (event) => {
 });
 
 self.addEventListener('message', (event) => {
-  console.log(event)
-  if (event.data && event.data.type === 'MESSAGE_IDENTIFIER') {
-    console.log('received message')
+  if (event.data && event.data.type === 'CLIENT_MESSAGE') {
+    local.shouldInterceptFetch = event.data.shouldInterceptFetch
   }
 })
