@@ -17,6 +17,11 @@ strong {
   border-bottom-width: 3px;
 }
 
+hr {
+  margin: 40px 0;
+  border-color: #000;
+}
+
 #Main {
   max-width: 720px;
   margin: 0 auto;
