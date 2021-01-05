@@ -6,6 +6,17 @@ body {
   line-height: 1.5rem;
 }
 
+strong {
+  display: inline-block;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+  border-left: none;
+  border-bottom-width: 3px;
+}
+
 #Main {
   max-width: 720px;
   margin: 0 auto;
